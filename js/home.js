@@ -7,8 +7,8 @@ const player_pos = {
     y: parseInt(window.innerWidth / 2)
 }
 const player_vel = {
-    x: 1,
-    y: 0
+    x: 2,
+    y: 2
 }
 const balls = []
 const sound = new Audio('assests/coin.mp3')
