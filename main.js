@@ -119,3 +119,4 @@ window.addEventListener('keyup', function(){
     player_vel.y = 0
     player.classList.remove('active')
 })
+
