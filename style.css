@@ -14,14 +14,14 @@ body{
 .villager{
     width: 80px;
     height: 100px;
-    background-image: url("assets/player_front.png");
+    background-image: url("ACharUp.png");
     background-size: 240px 100px;
     background-position: -80px 0;
     position: fixed;
     z-index: 999;
 }
 .player.active{
-    animation: .2s walk linear infinite;
+    animation: .1s walk linear infinite;
 }
 
 @keyframes walk{
