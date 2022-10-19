@@ -119,3 +119,8 @@ window.addEventListener('keyup', function(){
     player_vel.y = 0
     player.classList.remove('active')
 })
+
+//    if(e.key == "Shift" "ArrowRight"){
+//    player_vel.x = 5
+//    player.style.backgroundImage = 'url("assets/player_right.png")'
+//    }
