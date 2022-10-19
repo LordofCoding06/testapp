@@ -122,3 +122,21 @@ window.addEventListener('keyup', function(){
     player.classList.remove('active')
 })
 
+enemy1 = {
+    x: 0,
+    y: 0,
+    width: 150,
+    height: 150,
+}
+
+class Enemy{
+
+}
+
+function animate(){
+    enemy1.x++;
+    enemy1.y++;
+    ctx.fillRect(enemy1.x, enemy1.y, enemy1,width, enemy1.height);
+    requestAnimationFrame(animate);
+}
+animate();
