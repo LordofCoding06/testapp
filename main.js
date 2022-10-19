@@ -1,18 +1,17 @@
 const NUM_BUSHES = 50
-const NUM_Balls = 5
+const NUM_BALLS = 5
 
 const player = document.querySelector('.player')
 const player_pos = {
     x: parseInt(window.innerWidth / 2),
-    y: parseInt(window.innerWidth / 2)
+    y: parseInt(window.innerHeight / 2)
 }
 const player_vel = {
-    x: 1,
+    x: 0,
     y: 0
 }
 const balls = []
-const sound = new Audio('assests/coin.mp3')
-
+const sound = new Audio('assets/coin.mp3')
 
 function createBushes(){
     for(let i = 0; i < NUM_BUSHES; i++){
@@ -41,8 +40,8 @@ function generateBall(){
     document.body.appendChild(div)
 }
 
-function createballs(){
-    for(let i = 0; i < NUM_BUSHES; i++){
+function createBalls(){
+    for(let i = 0; i < NUM_BALLS; i++){
         generateBall()
     }
 }
@@ -54,6 +53,7 @@ function collision($div1, $div2) {
     var w1 = $div1.clientWidth;
     var b1 = y1 + h1;
     var r1 = x1 + w1;
+
     var x2 = $div2.getBoundingClientRect().left;
     var y2 = $div2.getBoundingClientRect().top;
     var h2 = $div2.clientHeight;
@@ -61,7 +61,7 @@ function collision($div1, $div2) {
     var b2 = y2 + h2;
     var r2 = x2 + w2;
 
-    if(b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false
+    if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false;
     return true;
 }
 
@@ -81,7 +81,7 @@ function run(){
 
     player.style.left = player_pos.x + 'px'
     player.style.bottom = player_pos.y + 'px'
-
+    
     checkCollisions()
 
     requestAnimationFrame(run)
@@ -89,14 +89,14 @@ function run(){
 
 function init(){
     createBushes()
-    createballs()
+    createBalls()
     run()
 }
 
 init()
 
 window.addEventListener('keydown', function(e){
-    if(e.key == "ArrowUP"){
+    if(e.key == "ArrowUp"){
         player_vel.y = 3
         player.style.backgroundImage = 'url("assets/player_front.png")'
     }
@@ -113,8 +113,6 @@ window.addEventListener('keydown', function(e){
         player.style.backgroundImage = 'url("assets/player_right.png")'
     }
     player.classList.add('active')
-        
-    
 })
 window.addEventListener('keyup', function(){
     player_vel.x = 0
