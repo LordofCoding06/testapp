@@ -7,8 +7,8 @@ const player_pos = {
     y: parseInt(window.innerWidth / 2)
 }
 const player_vel = {
-    x: 2,
-    y: 2
+    x: 1,
+    y: 0
 }
 const balls = []
 const sound = new Audio('assests/coin.mp3')
@@ -97,19 +97,19 @@ init()
 
 window.addEventListener('keydown', function(e){
     if(e.key == "ArrowUP"){
-        player_vel.y = 5
+        player_vel.y = 3
         player.style.backgroundImage = 'url("assets/player_front.png")'
     }
     if(e.key == "ArrowDown"){
-        player_vel.y = -5
+        player_vel.y = -3
         player.style.backgroundImage = 'url("assets/player_back.png")'
     }
     if(e.key == "ArrowLeft"){
-        player_vel.x = -5
+        player_vel.x = -3
         player.style.backgroundImage = 'url("assets/player_left.png")'
     }
     if(e.key == "ArrowRight"){
-        player_vel.x = 5
+        player_vel.x = 3
         player.style.backgroundImage = 'url("assets/player_right.png")'
     }
     player.classList.add('active')
